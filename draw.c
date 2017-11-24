@@ -37,7 +37,7 @@ void drawMap()
 
 void drawSnake(Snake p)
 {
-	for(; p!=null; p=p->next) {
+	for(; p!=tail; p=p->next) {
 		move(p->y,p->x);
 		addch('*');
 	}
@@ -46,7 +46,7 @@ void drawSnake(Snake p)
 
 void eraseSnake(Snake p)
 {
-	for(; p!=tail; p=p->next) {
+	for(; p!=NULL; p=p->next) {
 		move(p->y,p->x);
 		addch(' ');
 	}
