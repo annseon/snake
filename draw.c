@@ -37,7 +37,7 @@ void drawMap()
 
 void drawSnake(Snake p)
 {
-	for(; p!=tail; p=p->next) {
+	for(; p!=null; p=p->next) {
 		move(p->y,p->x);
 		addch('*');
 	}
