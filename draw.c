@@ -44,3 +44,23 @@ void drawSnake(Snake p)
 	refresh();
 }
 
+void eraseSnake(Snake p)
+{
+	for(; p!=tail; p=p->next) {
+		move(p->y,p->x);
+		addch(' ');
+	}
+	refresh();
+}
+
+void drawFood()
+{
+	do {
+		food.x = rand() % (WIDTH/2-2)*2 + 2;
+		food.y = rand() % (HEIGHT/2-2)*2 + 2;
+		move(food.y, food.x);
+	}while(((char)inch()) == '*');
+	move(food.y, food.x);
+	addch('o');
+	refresh();
+}
