@@ -29,7 +29,7 @@ int main()
 
 	Init();
 	signal(SIGALRM, sig_alrm);
-	set_ticker(500);
+	set_ticker(100);
 
 	while(1) {
 	key_ctl();

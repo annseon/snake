@@ -155,8 +155,8 @@ void Init()
 	dir_x = 1;
 	dir_y = 0;
 	head = (Snake)malloc(sizeof(SNAKE));
-	head->x = rand() % (WIDTH/2-2) + 2;
-	head->y = rand() % (HEIGHT/2-2) + 2;
+	head->x = rand() % (WIDTH/2-2)*2 + 2;
+	head->y = rand() % (HEIGHT/2-2)*2 + 2;
 	head->next = (Snake)malloc(sizeof(SNAKE));
 	tail = head->next;
 	tail->prev = head;
