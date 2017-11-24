@@ -6,11 +6,6 @@
 #include <sys/time.h>
 #include "drawin.h"
 
-typedef struct snake {
-	int x, y;
-	struct snake *next, *prev;
-}SNAKE, *Snake;
-
 typedef struct food {
 	int x, y;
 }FOOD, *Food;
@@ -44,7 +39,6 @@ void Snake_Move()
 {
 	Snake p, tmp;
 
-	eraseSnake(head);
 
 	for(p = tail; p != head; p = p->prev) {
 		p->x = p->prev->x;
@@ -68,6 +62,7 @@ void Snake_Move()
 		drawFood();
 	}
 
+	eraseSnake(head);
 	drawSnake(head);
 }
 
